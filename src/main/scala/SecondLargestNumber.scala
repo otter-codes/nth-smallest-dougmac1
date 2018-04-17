@@ -1,11 +1,18 @@
 object SecondLargestNumber {
 
-  def finder(register : List[Int], n : Int) : Int  = {
-    val register = List(1,2,3,4,5)
+  def finder(register: List[Int], n: Int): Int = {
 
-val register2 = register.distinct.sorted
-  register2(register2.length-n)
+    val singleNumbers = register.distinct.sorted
 
+    if (n <= singleNumbers.length && n > 0) {
 
+      singleNumbers(singleNumbers.length - n)
+
+    } else {
+
+      throw new NumberFormatException
+    }
   }
 }
+
+
